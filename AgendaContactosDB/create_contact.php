@@ -63,7 +63,7 @@ if($_POST){
   
         <tr>
             <td>Telefono</td>
-            <td><textarea name='telefono' class='form-control'></textarea></td>
+            <td><input name='telefono' class='form-control'></input></td>
         </tr>
   
         

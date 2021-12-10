@@ -22,7 +22,7 @@ class Contacto{
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    id=:id, nombre=:nombre, telefono=:telefono,  created=:created";
+                    id=:id, nombre=:nombre, telefono=:telefono";
   
         $stmt = $this->conn->prepare($query);
   
@@ -32,14 +32,13 @@ class Contacto{
         $this->telefono=htmlspecialchars(strip_tags($this->telefono));
         
   
-        // to get time-stamp for 'created' field
-        $this->timestamp = date('Y-m-d H:i:s');
+      
   
         // bind values 
         $stmt->bindParam(":id", $this->id);
         $stmt->bindParam(":nombre", $this->nombre);
         $stmt->bindParam(":telefono", $this->telefono);
-        $stmt->bindParam(":created", $this->timestamp);
+        
   
         if($stmt->execute()){
             return true;
@@ -55,7 +54,7 @@ class Contacto{
                 FROM
                     " . $this->table_name . "
                 ORDER BY
-                    nombre ASC
+                    id ASC
                 LIMIT
                     {$from_record_num}, {$records_per_page}";
       
@@ -116,20 +115,18 @@ function update(){
     $this->nombre=htmlspecialchars(strip_tags($this->nombre));
     $this->telefono=htmlspecialchars(strip_tags($this->telefono));
     
-    
+
   
     // bind parameters
     $stmt->bindParam(':id', $this->id);
     $stmt->bindParam(':nombre', $this->nombre);
     $stmt->bindParam(':telefono', $this->telefono);
-    
-   
+
   
     // execute the query
     if($stmt->execute()){
         return true;
     }
-  
     return false;
       
 }
