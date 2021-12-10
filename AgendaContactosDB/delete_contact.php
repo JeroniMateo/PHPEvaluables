@@ -4,7 +4,7 @@ if($_POST){
   
     // include database and object file
     include_once 'config/database.php';
-    include_once 'objects/product.php';
+    include_once 'objects/contacto.php';
   
     // get database connection
     $database = new Database();
@@ -17,11 +17,11 @@ if($_POST){
     $contacto->id = $_POST['object_id'];
       
     // delete the contact
-    if($product->delete()){
+    if($contacto->delete()){
         echo "Object was deleted.";
     }
       
-    // if unable to delete the product
+    // if unable to delete the contact
     else{
         echo "Unable to delete object.";
     }

@@ -8,7 +8,7 @@ if($page>1){
     echo "</a></li>";
 }
   
-// count all products in the database to calculate total pages
+// count all contact in the database to calculate total pages
 $total_pages = ceil($total_rows / $records_per_page);
   
 // range of links to show
