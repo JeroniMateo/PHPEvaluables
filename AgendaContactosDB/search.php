@@ -12,7 +12,6 @@ $database = new Database();
 $db = $database->getConnection();
   
 $contacto = new Contacto($db);
-
   
 // get search term
 $search_term=isset($_GET['s']) ? $_GET['s'] : '';

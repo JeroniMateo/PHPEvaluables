@@ -123,12 +123,11 @@ function update(){
     $stmt->bindParam(':telefono', $this->telefono);
 
   
-    // execute the query
-    if($stmt->execute()){
+    if($result = $stmt->execute()){
         return true;
+    }else{
+        return false;
     }
-    return false;
-      
 }
 // delete the contact
 function delete(){

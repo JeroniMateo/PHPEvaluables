@@ -35,18 +35,18 @@ echo "</div>";
 echo "<table class='table table-hover table-responsive table-bordered'>";
   
     echo "<tr>";
-        echo "<td>id</td>";
+        echo "<td>ID</td>";
         echo "<td>{$contacto->id}</td>";
     echo "</tr>";
   
   
     echo "<tr>";
-        echo "<td>Description</td>";
+        echo "<td>Nombre</td>";
         echo "<td>{$contacto->nombre}</td>";
     echo "</tr>";
   
     echo "<tr>";
-        echo "<td>Description</td>";
+        echo "<td>Telefono</td>";
         echo "<td>{$contacto->telefono}</td>";
     echo "</tr>";
   

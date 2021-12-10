@@ -1,11 +1,10 @@
 <?php
-
-// get ID of the product to be read
+// get ID of the contact to be read
 $id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: missing ID.');
   
 // include database and object files
 include_once 'config/database.php';
-include_once 'objects/product.php';
+include_once 'objects/contact.php';
 
   
 // get database connection
@@ -13,27 +12,27 @@ $database = new Database();
 $db = $database->getConnection();
   
 // prepare objects
-$product = new Contacto($db);
+$contact = new Contacto($db);
 
   
-// set ID property of product to be read
-$product->id = $id;
+// set ID property of contact to be read
+$contact->id = $id;
   
-// read the details of product to be read
-$product->readOne();
+// read the details of contact to be read
+$contact->readOne();
 
 // set page headers
-$page_title = "Read One Product";
+$page_title = "Read One contact";
 include_once "layout_header.php";
   
-// read products button
+// read contacts button
 echo "<div class='right-button-margin'>";
     echo "<a href='index.php' class='btn btn-primary pull-right'>";
-        echo "<span class='glyphicon glyphicon-list'></span> Read Products";
+        echo "<span class='glyphicon glyphicon-list'></span> Read Contact";
     echo "</a>";
 echo "</div>";
   
-// HTML table for displaying a product details
+// HTML table for displaying a contact details
 echo "<table class='table table-hover table-responsive table-bordered'>";
   
     echo "<tr>";

@@ -14,7 +14,7 @@ $db = $database->getConnection();
 $contacto = new Contacto($db);
 
   
-$page_title = "Read Contacts";
+$page_title = "Agenda Contactos";
 include_once "layout_header.php";
   
 // query contacts

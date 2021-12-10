@@ -1,6 +1,6 @@
 <?php
-// retrieve one product will be here
-  // get ID of the product to be edited
+
+  // get ID of the contact to be edited
 $id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: missing ID.');
   
 // include database and object files
@@ -16,44 +16,43 @@ $db = $database->getConnection();
 $contacto = new Contacto($db);
 
   
-// set ID property of product to be edited
+// set ID property of contact to be edited
 $contacto->id = $id;
   
-// read the details of product to be edited
+// read the details of contact to be edited
 $contacto->readOne();
 // set page header
-$page_title = "Update Product";
+$page_title = "Update Contact";
 include_once "layout_header.php";
   
-// contents will be here
+
 echo "<div class='right-button-margin'>
-          <a href='index.php' class='btn btn-default pull-right'>Read Products</a>
+          <a href='index.php' class='btn btn-default pull-right'>Read Contacts</a>
      </div>";
   
 ?>
-<!-- 'update product' form will be here -->
-<!-- post code will be here -->
+
 
 <?php 
 // if the form was submitted
 if($_POST){
   
-    // set product property values
+    // set contact property values
     $contacto->id = $_POST['id'];
     $contacto->nombre = $_POST['nombre'];
     $contacto->telefono = $_POST['telefono'];
   
-    // update the product
+    // update the contact
     if($contacto->update()){
         echo "<div class='alert alert-success alert-dismissable'>";
-            echo "Product was updated.";
+            echo "Contact was updated.";
         echo "</div>";
     }
   
-    // if unable to update the product, tell the user
+    // if unable to update the contact, tell the user
     else{
         echo "<div class='alert alert-danger alert-dismissable'>";
-            echo "Unable to update product.";
+            echo "Unable to update contact.";
         echo "</div>";
     }
 }
