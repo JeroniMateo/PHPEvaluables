@@ -3,10 +3,10 @@
 class Database{
  
     // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "agendadatabase";
-    private $username = "root";
-    private $password = "password";
+    private $host = "51.178.152.213";
+    private $db_name = "jmateo_agenda_db";
+    private $username = "jmate_usr";
+    private $password = "abc123.";
     public $conn;
  
     // get the database connection
@@ -15,7 +15,7 @@ class Database{
         $this->conn = null;
  
         try{
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
         }catch(PDOException $exception){
             echo "Connection error: " . $exception->getMessage();
         }
