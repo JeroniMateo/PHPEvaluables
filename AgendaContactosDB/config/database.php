@@ -5,7 +5,7 @@ class Database{
     // specify your own database credentials
     private $host = "51.178.152.213";
     private $db_name = "jmateo_agenda_db";
-    private $username = "jmate_usr";
+    private $username = "jmateo_usr";
     private $password = "abc123.";
     public $conn;
  
